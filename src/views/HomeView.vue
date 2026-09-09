@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
+import { submittedCards } from '@/stores/registrations'
 
 const formData = ref({
   username: '',
@@ -12,8 +13,6 @@ const formData = ref({
   gender: '',
   suburb: 'Clayton'
 })
-
-const submittedCards = ref([])
 
 const submitForm = () => {
   validateName(true)

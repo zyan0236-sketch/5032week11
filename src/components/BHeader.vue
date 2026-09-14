@@ -23,6 +23,9 @@ import { currentUser, role, dashboardPath } from '@/stores/auth'
         <li v-if="!currentUser" class="nav-item">
           <router-link to="/FireLogin" class="nav-link" active-class="active">Firebase Login</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/addbook" class="nav-link" active-class="active">Add Book</router-link>
+        </li>
         <template v-if="currentUser">
           <li class="nav-item">
             <router-link :to="dashboardPath(currentUser)" class="nav-link" active-class="active">

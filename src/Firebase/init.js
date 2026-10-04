@@ -2,13 +2,14 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCdOO6XZCJCcHEpXixC7Md1rxhUoWIdbuk",
-  authDomain: "fit5032-3d110.firebaseapp.com",
-  projectId: "fit5032-3d110",
-  storageBucket: "fit5032-3d110.firebasestorage.app",
-  messagingSenderId: "887276928344",
-  appId: "1:887276928344:web:ac37cd7ff89744b7d5f92d"
-};
+  apiKey: "AIzaSyCVNRhbTTN1F9Mo4dtLRNZ-tTrMrJIesFk",
+  authDomain: "fit5032-873b2.firebaseapp.com",
+  projectId: "fit5032-873b2",
+  storageBucket: "fit5032-873b2.firebasestorage.app",
+  messagingSenderId: "888313203015",
+  appId: "1:888313203015:web:9c461b04221c1d6cf6e462",
+  measurementId: "G-45MX66THVH"
+}
 
 const firebaseApp = initializeApp(firebaseConfig)
 export const db = getFirestore(firebaseApp)

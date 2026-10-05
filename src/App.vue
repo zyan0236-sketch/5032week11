@@ -1,22 +1,33 @@
-<script setup>
-// import JSONLab from './components/JSONLab.vue'
-import BHeader from './components/BHeader.vue'
-// import LibraryRegistrationForm from './views/HomeView.vue'
-</script>
-
 <template>
   <div class="main-container">
-  <header>
-    <BHeader />
-  </header>
-
-  <main class="main-box">
-    <!-- <LibraryRegistrationForm />-->
-    <!-- <JSONLab /> -->
-     <router-view></router-view>
-  </main>
+    <header v-if="showHeader">
+      <BHeader />
+    </header>
+    <main class="main-box">
+      <router-view></router-view>
+    </main>
   </div>
 </template>
+
+
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import BHeader from './components/BHeader.vue';
+
+
+// Note: CountBookAPI is registered as a route component via vue-router,
+// so it doesn't need to be imported here unless used directly in the template.
+
+
+const route = useRoute();
+
+
+// Computed property replacing the old computed option
+const showHeader = computed(() => {
+  return route.name !== 'CountBookAPI';
+});
+</script>
 
 <style scoped>
 /* header {

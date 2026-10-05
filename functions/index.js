@@ -41,6 +41,25 @@ exports.countBooks = onRequest({cors: true}, async (request, response) => {
   }
 });
 
+exports.getAllBooks = onRequest({cors: true}, async (request, response) => {
+  try {
+    const snapshot = await admin.firestore().collection("books").get();
+
+    const books = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    response.status(200).json(books);
+  } catch (error) {
+    console.error("Error fetching books:", error);
+
+    response.status(500).json({
+      error: "Error fetching books",
+    });
+  }
+});
+
 exports.capitalizeBook = onDocumentCreated(
     {
       document: "books/{bookId}",

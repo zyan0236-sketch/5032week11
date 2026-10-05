@@ -29,6 +29,12 @@ import { currentUser, role, dashboardPath } from '@/stores/auth'
         <li class="nav-item">
           <router-link to="/GetBookCount" class="nav-link" active-class="active">Get Book Count</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/WeatherCheck" class="nav-link" active-class="active">Get Weather</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/CountBookAPI" class="nav-link" active-class="active">Count Book API</router-link>
+        </li>
         <template v-if="currentUser">
           <li class="nav-item">
             <router-link :to="dashboardPath(currentUser)" class="nav-link" active-class="active">
